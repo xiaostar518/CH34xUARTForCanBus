@@ -1,0 +1,50 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+src-gen/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Mac
+.DS_Store
+
+# Generic
+*~
+.swp
+
+# Eclipse
+.project
+.classpath
+.metadata
+.settings
+*.properties
+
+# Android Studio
+.idea
+*.iml
+.ipr
+.iws
+out/
+build/
+.gradle/
+
+# Audi
+audi-*
