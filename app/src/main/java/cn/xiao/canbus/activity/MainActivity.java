@@ -1,7 +1,6 @@
 package cn.xiao.canbus.activity;
 
 
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -30,9 +29,8 @@ import cn.xiao.canbus.application.MyApp;
 public class MainActivity extends Activity {
 
     public static final String TAG = "MainActivity";
-    private static final String ACTION_USB_PERMISSION = "cn.wch.wchusbdriver.USB_PERMISSION";
+    private static final String ACTION_USB_PERMISSION = "cn.xiao.canbus.USB_PERMISSION";
 
-    public readThread handlerThread;
     protected final Object ThreadLock = new Object();
     private EditText readText;
     private EditText writeText;
@@ -109,7 +107,7 @@ public class MainActivity extends Activity {
         openButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View arg0) {
+            public void onClick(View view) {
                 if (!isOpen) {
                     retval = MyApp.driver.ResumeUsbList();
                     if (retval == -1)// ResumeUsbList方法用于枚举CH34X设备以及打开相关设备
@@ -143,7 +141,6 @@ public class MainActivity extends Activity {
 
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                // TODO Auto-generated method stub
 //								MainFragmentActivity.this.finish();
                                 System.exit(0);
                             }
@@ -152,12 +149,9 @@ public class MainActivity extends Activity {
 
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                // TODO Auto-generated method stub
-
                             }
                         });
                         builder.show();
-
                     }
                 } else {
                     openButton.setText("Open");
@@ -167,7 +161,6 @@ public class MainActivity extends Activity {
                     try {
                         Thread.sleep(200);
                     } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
                     MyApp.driver.CloseDevice();
@@ -428,7 +421,7 @@ public class MainActivity extends Activity {
             byte[] buffer = new byte[4096];
 
             while (true) {
-
+                Log.d(TAG, "driverRunningState = " + isOpen);
                 Message msg = Message.obtain();
                 if (!isOpen) {
                     break;

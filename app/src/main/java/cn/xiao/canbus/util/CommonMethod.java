@@ -327,4 +327,26 @@ public class CommonMethod {
     public static String byteToHexString(byte b) {
         return Integer.toHexString(Integer.valueOf(String.valueOf(b)));
     }
+
+
+    /**
+     * 字节数组转16进制
+     *
+     * @param bytes 需要转换的byte数组
+     * @return 转换后的Hex字符串
+     */
+    public static String bytesToHex(byte[] bytes, int length) {
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < length; i++) {
+            String hex = Integer.toHexString(bytes[i] & 0xFF);
+            if (hex.length() < 2) {
+                sb.append(0);
+            }
+            sb.append(hex);
+            if (1 == i % 2) {
+                sb.append(" ");
+            }
+        }
+        return sb.toString();
+    }
 }
