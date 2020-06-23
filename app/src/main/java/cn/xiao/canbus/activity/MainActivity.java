@@ -127,7 +127,7 @@ public class MainActivity extends Activity {
                         Toast.makeText(MainActivity.this, "打开设备成功!",
                                 Toast.LENGTH_SHORT).show();
                         isOpen = true;
-                        openButton.setText("Close");
+                        openButton.setText(getText(R.string.close));
                         configButton.setEnabled(true);
                         writeButton.setEnabled(true);
                         new readThread().start();//开启读线程读取串口接收的数据
@@ -154,7 +154,7 @@ public class MainActivity extends Activity {
                         builder.show();
                     }
                 } else {
-                    openButton.setText("Open");
+                    openButton.setText(getText(R.string.open));
                     configButton.setEnabled(false);
                     writeButton.setEnabled(false);
                     isOpen = false;

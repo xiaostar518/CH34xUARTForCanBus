@@ -16,12 +16,12 @@
         android:textSize="22sp" />
 
     <Button
-        android:id="@+id/btn_close"
+        android:id="@+id/btn_quit"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentRight="true"
         android:background="#FF00FF"
-        android:text="Close"
+        android:text="@string/quit"
         android:textAllCaps="false"
         android:textSize="22sp" />
 
