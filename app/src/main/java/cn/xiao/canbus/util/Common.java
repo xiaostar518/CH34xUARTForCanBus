@@ -8,5 +8,4 @@ public class Common {
     //驱动设备打开成功
     public static final int DRIVER_STATE_CODE_SUCCESS = 0;
 
-
 }

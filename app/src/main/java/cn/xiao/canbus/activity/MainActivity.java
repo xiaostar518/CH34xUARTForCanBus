@@ -227,7 +227,7 @@ public class MainActivity extends Activity {
         writeText = (EditText) findViewById(R.id.WriteValues);
         configButton = (Button) findViewById(R.id.configButton);
         writeButton = (Button) findViewById(R.id.WriteButton);
-        openButton = (Button) findViewById(R.id.open_device);
+        openButton = (Button) findViewById(R.id.btn_open_device);
         clearButton = (Button) findViewById(R.id.clearButton);
 
         baudSpinner = (Spinner) findViewById(R.id.baudRateValue);
@@ -238,7 +238,7 @@ public class MainActivity extends Activity {
         baudSpinner.setAdapter(baudAdapter);
         baudSpinner.setGravity(0x10);
         baudSpinner.setSelection(9);
-        /* by default it is 9600 */
+        /* by default it is 460800 */
         baudRate = 460800;
 
         /* stop bits */

@@ -17,7 +17,7 @@
         android:tag="configure block" >
 
         <Button
-            android:id="@+id/open_device"
+            android:id="@+id/btn_open_device"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
