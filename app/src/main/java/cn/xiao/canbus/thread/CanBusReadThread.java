@@ -33,6 +33,8 @@ public class CanBusReadThread extends Thread {
         this.mDriverHandler = driverHandler;
     }
 
+
+
     public void run() {
         byte[] buffer = new byte[4096];
 
@@ -49,12 +51,6 @@ public class CanBusReadThread extends Thread {
                 message.obj = "receiveMessage";
                 mDriverHandler.sendMessage(message);
             }
-
-//            try {
-//                Thread.sleep(100);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
         }
         Log.d(TAG, "driverRunningState = false");
         mCanBusReadThread = null;
